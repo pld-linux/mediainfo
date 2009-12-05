@@ -73,7 +73,7 @@ What format (container) does MediaInfo support?
 
 %prep
 %setup -q -n MediaInfo
-dos2unix     *.html *.txt Release/*.txt
+dos2unix *.html *.txt Release/*.txt
 chmod 644 *.html *.txt Release/*.txt
 
 %build
@@ -83,25 +83,29 @@ export CXXFLAGS="%{rpmcxxflags}"
 
 # build CLI
 cd Project/GNU/CLI
-	chmod +x autogen
-	./autogen
+	%{__libtoolize}
+	%{__aclocal}
+	%{__autoconf}
+	%{__automake}
 	%configure
 	%{__make}
-cd ../../..
+cd -
 
 # now build GUI
 cd Project/GNU/GUI
-	chmod +x autogen
-	./autogen
+	%{__libtoolize}
+	%{__aclocal}
+	%{__autoconf}
+	%{__automake}
 	%configure \
 		--with-wx-config=%{_bindir}/wx-gtk2-unicode-config
 	%{__make}
-cd ../../..
+cd -
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} -C Project/GNU/CLI \
-	 install \
+	install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__make} -C Project/GNU/GUI \
