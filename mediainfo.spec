@@ -7,9 +7,12 @@ Group:		Applications/Multimedia
 URL:		http://mediainfo.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{version}/%{name}_%{version}.tar.bz2
 # Source0-md5:	addbec472d8e20b93e9d3ba2956aea2b
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	dos2unix
 BuildRequires:	libmediainfo-devel >= 0.7.25
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	libzen-devel >= 0.4.9
 BuildRequires:	pkgconfig
 BuildRequires:	wxGTK2-unicode-devel
