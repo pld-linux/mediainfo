@@ -1,24 +1,24 @@
+%define	libmediainfo_ver	0.7.28
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
-Version:	0.7.25
-Release:	0.1
+Version:	0.7.28
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 URL:		http://mediainfo.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{version}/%{name}_%{version}.tar.bz2
-# Source0-md5:	addbec472d8e20b93e9d3ba2956aea2b
+# Source0-md5:	1c76a9ea36c179ccd004b87870b4a5d9
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dos2unix
-BuildRequires:	libmediainfo-devel >= 0.7.25
+BuildRequires:	libmediainfo-devel >= %{libmediainfo_ver}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	libzen-devel >= 0.4.9
 BuildRequires:	pkgconfig
 BuildRequires:	wxGTK2-unicode-devel
 BuildRequires:	zlib-devel
-Requires:	libmediainfo >= 0.7.25
-Requires:	libzen >= 0.4.9
+Requires:	libmediainfo >= %{libmediainfo_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
