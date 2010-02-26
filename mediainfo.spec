@@ -147,11 +147,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/mediainfo-gui
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
-%dir %{_iconsdir}/hicolor
-%dir %{_iconsdir}/hicolor/128x128
-%dir %{_iconsdir}/hicolor/128x128/apps
 %{_iconsdir}/hicolor/128x128/apps/*.png
-%dir %{_datadir}/apps
 %dir %{_datadir}/apps/konqueror
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
