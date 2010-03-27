@@ -1,13 +1,13 @@
-%define	libmediainfo_ver	0.7.29
+%define	libmediainfo_ver	0.7.30
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
-Version:	0.7.29
+Version:	0.7.30
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 URL:		http://mediainfo.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{version}/%{name}_%{version}.tar.bz2
-# Source0-md5:	bedc73df1f513840754cd679c7578b48
+# Source0-md5:	a16f3635f82d4ecf6418536569bb3841
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dos2unix
