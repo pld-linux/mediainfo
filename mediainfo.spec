@@ -2,7 +2,7 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
 Version:	0.7.30
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Multimedia
 URL:		http://mediainfo.sourceforge.net/
