@@ -151,7 +151,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/konqueror
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
-%dir %{_datadir}/kde4
-%dir %{_datadir}/kde4/services
-%dir %{_datadir}/kde4/services/ServiceMenus
 %{_datadir}/kde4/services/ServiceMenus/*.desktop
