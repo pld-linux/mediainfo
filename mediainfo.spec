@@ -2,7 +2,7 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
 Version:	0.7.30
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Multimedia
 URL:		http://mediainfo.sourceforge.net/
@@ -46,6 +46,7 @@ What format (container) does MediaInfo support?
 %package gui
 Summary:	Supplies technical and tag information about a video or audio file (GUI)
 Group:		X11/Applications/Multimedia
+Requires:	kde-common-dirs >= 0.5
 Requires:	libmediainfo >= %{version}
 Requires:	libzen >= 0.4.9
 
@@ -148,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*.png
 %{_iconsdir}/hicolor/128x128/apps/*.png
-%dir %{_datadir}/apps/konqueror
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
 %{_datadir}/kde4/services/ServiceMenus/*.desktop
