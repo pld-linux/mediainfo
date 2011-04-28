@@ -1,4 +1,3 @@
-%define	libmediainfo_ver	0.7.44
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
 Version:	0.7.44
@@ -11,13 +10,13 @@ Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{v
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dos2unix
-BuildRequires:	libmediainfo-devel >= %{libmediainfo_ver}
+BuildRequires:	libmediainfo-devel >= %{version}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	wxGTK2-unicode-devel
 BuildRequires:	zlib-devel
-Requires:	libmediainfo >= %{libmediainfo_ver}
+Requires:	libmediainfo >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
