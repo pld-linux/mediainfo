@@ -1,11 +1,11 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
-Version:	0.7.47
+Version:	0.7.60
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{version}/%{name}_%{version}.tar.bz2
-# Source0-md5:	865b38a17f462edda89aa226418c968a
+# Source0-md5:	ed1e1baf50ac101ef5c41b6b32ada36e
 URL:		http://mediainfo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -113,10 +113,10 @@ rm -rf $RPM_BUILD_ROOT
 
 # icon
 install -dm 755 $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps
-install Source/Ressource/Image/MediaInfo.png \
+install Source/Resource/Image/MediaInfo.png \
 	$RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
 install -dm 755 $RPM_BUILD_ROOT%{_pixmapsdir}
-install Source/Ressource/Image/MediaInfo.png \
+install Source/Resource/Image/MediaInfo.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
 # menu-entry
