@@ -1,11 +1,11 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Name:		mediainfo
-Version:	0.7.60
+Version:	0.7.61
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/project/mediainfo/source/mediainfo/%{version}/%{name}_%{version}.tar.bz2
-# Source0-md5:	ed1e1baf50ac101ef5c41b6b32ada36e
+# Source0-md5:	46fd776968ec1047cd2a5056a906cdf2
 URL:		http://mediainfo.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
