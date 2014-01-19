@@ -2,11 +2,12 @@ Summary:	Supplies technical and tag information about a video or audio file (CLI
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
 Version:	0.7.61
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/mediainfo/%{name}_%{version}.tar.bz2
 # Source0-md5:	46fd776968ec1047cd2a5056a906cdf2
+Patch0:		wxWidgets3.patch
 URL:		http://mediainfo.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -123,6 +124,7 @@ Obsługiwane formaty/kontenery:
 
 %prep
 %setup -q -n MediaInfo
+%patch0 -p1
 %undos *.html *.txt Release/*.txt
 chmod 644 *.html *.txt Release/*.txt
 
