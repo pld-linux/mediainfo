@@ -7,7 +7,6 @@ License:	LGPL v2+
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/mediainfo/%{name}_%{version}.tar.bz2
 # Source0-md5:	480ac31a4080737f21937f9d260b96de
-Patch0:		wxWidgets3.patch
 URL:		http://mediainfo.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -124,7 +123,6 @@ Obsługiwane formaty/kontenery:
 
 %prep
 %setup -q -n MediaInfo
-#%patch0 -p1
 %undos *.html *.txt Release/*.txt
 chmod 644 *.html *.txt Release/*.txt
 
