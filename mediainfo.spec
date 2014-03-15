@@ -168,10 +168,10 @@ install Project/GNU/GUI/mediainfo-gui.desktop \
 	$RPM_BUILD_ROOT%{_desktopdir}
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus
 install Project/GNU/GUI/mediainfo-gui.kde3.desktop \
-	$RPM_BUILD_ROOT/%{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
+	$RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
 install -d $RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus
 install Project/GNU/GUI/mediainfo-gui.kde4.desktop \
-	$RPM_BUILD_ROOT/%{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
+	$RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
 
 %clean
 rm -rf $RPM_BUILD_ROOT
