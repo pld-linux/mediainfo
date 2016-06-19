@@ -1,12 +1,12 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
-Version:	0.7.67
-Release:	2
+Version:	0.7.86
+Release:	1
 License:	LGPL v2+
 Group:		Applications/Multimedia
 Source0:	http://downloads.sourceforge.net/mediainfo/%{name}_%{version}.tar.bz2
-# Source0-md5:	480ac31a4080737f21937f9d260b96de
+# Source0-md5:	a9880e00edf6a9e3ac19cca9a68a5cae
 URL:		http://mediainfo.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -156,21 +156,21 @@ rm -rf $RPM_BUILD_ROOT
 
 # icon
 install -d $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps
-install Source/Resource/Image/MediaInfo.png \
+cp -p Source/Resource/Image/MediaInfo.png \
 	$RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
 install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-install Source/Resource/Image/MediaInfo.png \
+cp -p Source/Resource/Image/MediaInfo.png \
 	$RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
 # menu-entry
 install -d $RPM_BUILD_ROOT%{_desktopdir}
-install Project/GNU/GUI/mediainfo-gui.desktop \
+cp -p Project/GNU/GUI/mediainfo-gui.desktop \
 	$RPM_BUILD_ROOT%{_desktopdir}
 install -d $RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus
-install Project/GNU/GUI/mediainfo-gui.kde3.desktop \
+cp -p Project/GNU/GUI/mediainfo-gui.kde3.desktop \
 	$RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
 install -d $RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus
-install Project/GNU/GUI/mediainfo-gui.kde4.desktop \
+cp -p Project/GNU/GUI/mediainfo-gui.kde4.desktop \
 	$RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
 
 %clean
@@ -180,6 +180,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc License.html History_CLI.txt Release/ReadMe_CLI_Linux.txt
 %attr(755,root,root) %{_bindir}/mediainfo
+%{_datadir}/appdata/mediainfo-gui.appdata.xml
 
 %files gui
 %defattr(644,root,root,755)
