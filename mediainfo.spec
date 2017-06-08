@@ -1,25 +1,28 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
-Version:	0.7.86
+Version:	0.7.96
 Release:	1
 License:	LGPL v2+
 Group:		Applications/Multimedia
-Source0:	http://downloads.sourceforge.net/mediainfo/%{name}_%{version}.tar.bz2
-# Source0-md5:	a9880e00edf6a9e3ac19cca9a68a5cae
-URL:		http://mediainfo.sourceforge.net/
+Source0:	https://mediaarea.net/download/source/mediainfo/%{version}/%{name}_%{version}.tar.xz
+# Source0-md5:	230cf5a8b44e74897313946fefed7eb1
+URL:		https://mediaarea.net/MediaInfo
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libmediainfo-devel >= %{version}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
-BuildRequires:	libzen-devel
+BuildRequires:	libzen-devel >= 0.4.35
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	wxGTK2-unicode-devel >= 2.6.0
+BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	libmediainfo >= %{version}
+Requires:	libzen >= 0.4.35
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -73,7 +76,7 @@ Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwię
 Group:		X11/Applications/Multimedia
 Requires:	kde-common-dirs >= 0.5
 Requires:	libmediainfo >= %{version}
-Requires:	libzen >= 0.4.9
+Requires:	libzen >= 0.4.35
 Requires:	wxGTK2-unicode >= 2.6.0
 
 %description gui
@@ -154,31 +157,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C Project/GNU/GUI install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# icon
-install -d $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps
-cp -p Source/Resource/Image/MediaInfo.png \
-	$RPM_BUILD_ROOT%{_datadir}/icons/hicolor/128x128/apps/%{name}.png
-install -d $RPM_BUILD_ROOT%{_pixmapsdir}
-cp -p Source/Resource/Image/MediaInfo.png \
-	$RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
-
-# menu-entry
-install -d $RPM_BUILD_ROOT%{_desktopdir}
-cp -p Project/GNU/GUI/mediainfo-gui.desktop \
-	$RPM_BUILD_ROOT%{_desktopdir}
-install -d $RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus
-cp -p Project/GNU/GUI/mediainfo-gui.kde3.desktop \
-	$RPM_BUILD_ROOT%{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
-install -d $RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus
-cp -p Project/GNU/GUI/mediainfo-gui.kde4.desktop \
-	$RPM_BUILD_ROOT%{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc License.html History_CLI.txt Release/ReadMe_CLI_Linux.txt
+%doc License.html History_CLI.txt README.md Release/ReadMe_CLI_Linux.txt
 %attr(755,root,root) %{_bindir}/mediainfo
 %{_datadir}/appdata/mediainfo-gui.appdata.xml
 
@@ -187,8 +171,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc License.html History_GUI.txt Release/ReadMe_GUI_Linux.txt
 %attr(755,root,root) %{_bindir}/mediainfo-gui
 %{_desktopdir}/mediainfo-gui.desktop
-%{_pixmapsdir}/mediainfo.png
-%{_iconsdir}/hicolor/128x128/apps/mediainfo.png
+%{_pixmapsdir}/mediainfo.xpm
+%{_iconsdir}/hicolor/256x256/apps/mediainfo.png
+%{_iconsdir}/hicolor/scalable/apps/mediainfo.svg
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
 %{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
