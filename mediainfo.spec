@@ -2,7 +2,7 @@ Summary:	Supplies technical and tag information about a video or audio file (CLI
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
 Version:	0.7.96
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		Applications/Multimedia
 Source0:	https://mediaarea.net/download/source/mediainfo/%{version}/%{name}_%{version}.tar.xz
