@@ -1,12 +1,12 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
-Version:	0.7.96
-Release:	2
+Version:	18.05
+Release:	1
 License:	LGPL v2+
 Group:		Applications/Multimedia
 Source0:	https://mediaarea.net/download/source/mediainfo/%{version}/%{name}_%{version}.tar.xz
-# Source0-md5:	230cf5a8b44e74897313946fefed7eb1
+# Source0-md5:	5f166097fc7ad94541ee1ba3fe58769c
 URL:		https://mediaarea.net/MediaInfo
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -164,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc License.html History_CLI.txt README.md Release/ReadMe_CLI_Linux.txt
 %attr(755,root,root) %{_bindir}/mediainfo
-%{_datadir}/appdata/mediainfo-gui.appdata.xml
+%{_datadir}/metainfo/mediainfo-gui.metainfo.xml
 
 %files gui
 %defattr(644,root,root,755)
@@ -177,3 +177,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
 %{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
+%{_datadir}/kservices5/ServiceMenus/mediainfo-gui.desktop
