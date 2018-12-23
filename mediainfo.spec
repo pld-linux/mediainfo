@@ -1,19 +1,19 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
-Version:	18.05
+Version:	18.12
 Release:	1
-License:	LGPL v2+
+License:	BSD or Apache v2.0 or LGPL v2.1+ or GPL v2+ or MPL v2.0+
 Group:		Applications/Multimedia
 Source0:	https://mediaarea.net/download/source/mediainfo/%{version}/%{name}_%{version}.tar.xz
-# Source0-md5:	5f166097fc7ad94541ee1ba3fe58769c
+# Source0-md5:	5a7e2a5d14ca9b34d5abca59f98f68f2
 URL:		https://mediaarea.net/MediaInfo
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	libmediainfo-devel >= %{version}
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
-BuildRequires:	libzen-devel >= 0.4.35
+BuildRequires:	libzen-devel >= 0.4.37
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
@@ -22,7 +22,7 @@ BuildRequires:	wxGTK2-unicode-devel >= 2.6.0
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	libmediainfo >= %{version}
-Requires:	libzen >= 0.4.35
+Requires:	libzen >= 0.4.37
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,7 +76,7 @@ Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwię
 Group:		X11/Applications/Multimedia
 Requires:	kde-common-dirs >= 0.5
 Requires:	libmediainfo >= %{version}
-Requires:	libzen >= 0.4.35
+Requires:	libzen >= 0.4.37
 Requires:	wxGTK2-unicode >= 2.6.0
 
 %description gui
