@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_without	gui	# build without GUI
+
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
@@ -19,7 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	wxGTK2-unicode-devel >= 2.6.0
+%{?with_gui:BuildRequires:	wxGTK2-unicode-devel >= 2.6.0}
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	libmediainfo >= %{version}
@@ -139,6 +142,7 @@ cd Project/GNU/CLI
 %{__automake}
 %configure
 %{__make}
+%if %{with gui}
 # now build GUI
 cd ../../../Project/GNU/GUI
 %{__libtoolize}
@@ -148,6 +152,7 @@ cd ../../../Project/GNU/GUI
 %configure \
 	--with-wx-config=%{_bindir}/wx-gtk2-unicode-config
 %{__make}
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -155,8 +160,10 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C Project/GNU/CLI install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%if %{with gui}
 %{__make} -C Project/GNU/GUI install \
 	DESTDIR=$RPM_BUILD_ROOT
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -165,8 +172,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc License.html History_CLI.txt README.md Release/ReadMe_CLI_Linux.txt
 %attr(755,root,root) %{_bindir}/mediainfo
-%{_datadir}/metainfo/mediainfo-gui.metainfo.xml
 
+%if %{with gui}
 %files gui
 %defattr(644,root,root,755)
 %doc License.html History_GUI.txt Release/ReadMe_GUI_Linux.txt
@@ -179,3 +186,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
 %{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
 %{_datadir}/kservices5/ServiceMenus/mediainfo-gui.desktop
+%{_datadir}/metainfo/mediainfo-gui.metainfo.xml
+%endif
