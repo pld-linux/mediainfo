@@ -5,7 +5,7 @@ Summary:	Supplies technical and tag information about a video or audio file (CLI
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
 Version:	21.09
-Release:	1
+Release:	2
 License:	BSD or Apache v2.0 or LGPL v2.1+ or GPL v2+ or MPL v2.0+
 Group:		Applications/Multimedia
 #Source0Download: https://github.com/MediaArea/MediaInfo/releases
@@ -22,7 +22,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
-%{?with_gui:BuildRequires:	wxGTK2-unicode-devel >= 2.6.0}
+%{?with_gui:BuildRequires:	wxGTK3-unicode-devel >= 3.0.0}
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	libmediainfo >= %{version}
@@ -81,7 +81,7 @@ Group:		X11/Applications/Multimedia
 Requires:	kde-common-dirs >= 0.5
 Requires:	libmediainfo >= %{version}
 Requires:	libzen >= 0.4.37
-Requires:	wxGTK2-unicode >= 2.6.0
+Requires:	wxGTK3-unicode >= 3.0.0
 
 %description gui
 MediaInfo (Graphical User Interface).
@@ -150,7 +150,7 @@ cd ../../../Project/GNU/GUI
 %{__autoconf}
 %{__automake}
 %configure \
-	--with-wx-config=%{_bindir}/wx-gtk2-unicode-config
+	--with-wx-config=%{_bindir}/wx-gtk3-unicode-config
 %{__make}
 %endif
 
@@ -163,6 +163,9 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with gui}
 %{__make} -C Project/GNU/GUI install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# Remove kde3 and kde4 files
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/{apps,kde4}
 %endif
 
 %clean
@@ -182,9 +185,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/mediainfo.xpm
 %{_iconsdir}/hicolor/256x256/apps/mediainfo.png
 %{_iconsdir}/hicolor/scalable/apps/mediainfo.svg
-%dir %{_datadir}/apps/konqueror/servicemenus
-%{_datadir}/apps/konqueror/servicemenus/mediainfo-gui.desktop
-%{_datadir}/kde4/services/ServiceMenus/mediainfo-gui.desktop
 %{_datadir}/kservices5/ServiceMenus/mediainfo-gui.desktop
 %{_datadir}/metainfo/mediainfo-gui.metainfo.xml
 %endif
