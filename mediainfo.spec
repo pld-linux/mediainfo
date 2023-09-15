@@ -78,6 +78,9 @@ Obsługiwane formaty/kontenery:
 Summary:	Supplies technical and tag information about a video or audio file (GUI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (GUI)
 Group:		X11/Applications/Multimedia
+Requires(post,postun):	desktop-file-utils
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 Requires:	kde-common-dirs >= 0.5
 Requires:	libmediainfo >= %{version}
 Requires:	libzen >= 0.4.37
@@ -170,6 +173,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post gui
+%update_desktop_database_post
+%update_icon_cache hicolor
+
+%postun gui
+%update_desktop_database_postun
+%update_icon_cache hicolor
 
 %files
 %defattr(644,root,root,755)
