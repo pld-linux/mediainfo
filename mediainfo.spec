@@ -4,13 +4,13 @@
 Summary:	Supplies technical and tag information about a video or audio file (CLI)
 Summary(pl.UTF-8):	Informacje techniczne i znaczniki dla plików wideo i dźwiękowych (CLI)
 Name:		mediainfo
-Version:	24.06
+Version:	24.12
 Release:	1
 License:	BSD or Apache v2.0 or LGPL v2.1+ or GPL v2+ or MPL v2.0+
 Group:		Applications/Multimedia
 #Source0Download: https://github.com/MediaArea/MediaInfo/releases
 Source0:	https://github.com/MediaArea/MediaInfo/archive/v%{version}/MediaInfo-%{version}.tar.gz
-# Source0-md5:	04029eb3759b9414e5fa59e92bd3b9c3
+# Source0-md5:	7d9129fb7229913a577db9357dd2de7f
 URL:		https://mediaarea.net/MediaInfo
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
